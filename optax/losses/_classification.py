@@ -404,6 +404,7 @@ def softmax_cross_entropy_with_integer_labels(
     axis = len(batch_axis)
     # pyrefly: ignore [missing-attribute]
     logits = logits.transpose(batch_axis + logit_axis)  # pytype: disable=attribute-error  # jax-arraylike # noqa: E501
+    # pyrefly: ignore [missing-attribute]
     logits = logits.reshape(logits.shape[:len(batch_axis)] + (-1,))
     if where is not None:
       # pyrefly: ignore [missing-attribute]
